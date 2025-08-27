@@ -78,15 +78,14 @@ body {
     color: #fff;
 }
 
-/* Main Content - Основний контент */
 .main-content {
     padding: 20px 40px;
 }
 
-/* Top Bar - Верхня панель */
+/* Верхня панель */
 .top-bar {
     display: flex;
-    justify-content: flex-end; /* Вирівнювання по правому краю */
+    justify-content: flex-end; /* по правому краю */
     align-items: center;
     gap: 15px;
     margin-bottom: 30px;
@@ -111,7 +110,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     color: #aaa;
-    font-size: 20px; /* Додаємо розмір іконки */
+    font-size: 20px; 
 }
 
 .user-actions {
@@ -121,15 +120,15 @@ body {
 
 .user-actions .add-btn,
 .user-actions .login-btn {
-    text-decoration: none; /* Прибираємо підкреслення */
+    text-decoration: none; 
     padding: 10px 20px;
     border: none;
     border-radius: 25px;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
-    display: inline-block; /* Щоб можна було застосовувати відступи та розміри */
-    text-align: center; /* Центруємо текст */
+    display: inline-block; 
+    text-align: center; 
 }
 
 .user-actions .add-btn {
@@ -140,12 +139,12 @@ body {
 .user-actions .login-btn {
     background-color: transparent;
     border: 1px solid #ddd;
-    color: #333; /* Задаємо колір тексту */
+    color: #333; 
 }
-/* Головна секція з фоновою картинкою та текстом */
+
 .hero-section {
     position: relative;
-    height: 400px; /* Висота блоку */
+    height: 400px; 
     background: url('../img/main.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
@@ -164,11 +163,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Напівпрозорий overlay */
+    background-color: rgba(0, 0, 0, 0.4); 
 }
 
 .hero-content {
-    position: relative; /* Щоб контент був поверх overlay */
+    position: relative; 
     z-index: 1;
     max-width: 700px;
     padding: 20px;
@@ -186,14 +185,12 @@ body {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
-/* Загальний контейнер контенту */
 .content-container {
     padding: 20px 40px;
     max-width: 1200px;
     margin: auto;
 }
 
-/* Заголовок секції */
 .section-title {
     text-align: center;
     font-size: 28px;
@@ -202,7 +199,6 @@ body {
     font-weight: 600;
 }
 
-/* Картки категорій (оновлені стилі) */
 .category-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -247,8 +243,8 @@ footer {
     margin-top: 50px;
     font-size: 14px;
 }
-/* Нові стилі для сторінки рецептів */
 
+/* Сторінка рецепти */
 .recipe-block-new {
     background-color: #fff;
     border-radius: 12px;
@@ -275,7 +271,7 @@ footer {
     height: auto;
     border-radius: 12px;
     object-fit: cover;
-    flex-shrink: 0; /* Щоб зображення не зменшувалося */
+    flex-shrink: 0; 
 }
 
 .recipe-description-new {
@@ -286,7 +282,7 @@ footer {
 
 .recipe-details-new {
     display: grid;
-    grid-template-columns: 1fr 2fr; /* Створюємо дві колонки: одна для інгредієнтів, інша для інструкцій */
+    grid-template-columns: 1fr 2fr; /* дві колонки */
     gap: 40px;
 }
 
@@ -322,7 +318,7 @@ footer {
     height: 150px;
     border-radius: 12px;
     object-fit: cover;
-    flex-shrink: 0; /* Щоб зображення не зменшувалося */
+    flex-shrink: 0; 
 }
 
 .instruction-step-new p {
@@ -330,7 +326,7 @@ footer {
     line-height: 1.6;
     color: #555;
 }
-/* Стилі для кнопки пошуку */
+/* Кнопка пошуку */
 .search-button {
     background: transparent;
     border: none;
@@ -341,10 +337,9 @@ footer {
 .search-button .search-icon {
     margin: 0;
     color: #aaa;
-    font-size: 16px; /* Розмір іконки */
+    font-size: 16px; /* іконки */
 }
 
-/* Оновлені стилі для .search-box */
 .search-box {
     display: flex;
     align-items: center;
@@ -352,7 +347,7 @@ footer {
     border: 1px solid #ddd;
     border-radius: 25px;
     background-color: #fff;
-    padding: 10px 15px; /* Регулюємо відступи */
+    padding: 10px 15px; 
     width: 300px;
 }
 
@@ -360,15 +355,15 @@ footer {
     width: 100%;
     border: none;
     outline: none;
-    padding: 0; /* Видаляємо внутрішній padding */
+    padding: 0; 
 }
-/* Стилі для сторінки входу */
+/* Сторінка входу */
 .login-page {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f2f5; /* Такий же фон, як на сайті */
+    background-color: #f0f2f5; 
 }
 
 .modal-content-static {
@@ -483,7 +478,7 @@ footer {
     color: #777;
     font-size: 12px;
 }
-/* Стилі для сторінки "Додати рецепт" */
+/* Сторінка "Додати рецепт" */
 .add-recipe-section {
     max-width: 800px;
     margin: 0 auto;
