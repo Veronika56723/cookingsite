@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food.ua - Рецепти</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="page-container">
+        <aside class="sidebar">
+            <div class="logo-sidebar">
+                <i class="fa-solid fa-cookie-bite"></i>
+                <a href="#">Food.ua</a>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="soup_recepty.html"><i class="fas fa-utensils"></i>Супи перші страви</a></li>
+                    <li><a href="#"><i class="fas fa-pepper-hot"></i>Другі гарячі страви</a></li>
+                    <li><a href="#"><i class="fas fa-leaf"></i>Салати</a></li>
+                    <li><a href="#"><i class="fas fa-cookie"></i>Десерти</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <form action="soup_recepty.html" method="get">
+                    <div class="search-box">
+                        <input type="text" name="query" placeholder="Пошук рецептів...">
+                        <button type="submit" class="search-button">
+                            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        </button>
+                    </div>
+                </form>
+                <div class="user-actions">
+                    <a href="add_recipe.html" class="add-btn">Додати</a>
+                    <a href="login.html" class="login-btn">Увійти</a>
+                </div>
+            </header>
+
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1>Ваш кулінарний путівник</h1>
+                    <p>Цей сайт створений для тих, хто любить смачну домашню їжу. Тут ви знайдете перевірені рецепти українських та світових страв з детальним описом і фотографіями.</p>
+                </div>
+            </section>
+
+            <section class="content-container">
+                <h2 class="section-title">Що бажаєте приготувати?</h2>
+                <div class="category-cards">
+                    <div class="category-card">
+                        <img src="img/soup.jpg" alt="Супи">
+                        <a href="#">Супи</a>
+                    </div>
+                    <div class="category-card">
+                        <img src="img/snack.jpg" alt="Основні страви">
+                        <a href="#">Основні страви</a>
+                    </div>
+                    <div class="category-card">
+                        <img src="img/salad.jpg" alt="Салати">
+                        <a href="#">Салати</a>
+                    </div>
+                    <div class="category-card">
+                        <img src="img/dessert.jpg" alt="Десерти">
+                        <a href="#">Десерти</a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer>
+        <p>© 2025 Food.ua | Створено в межах практики Борейко В.Б</p>
+    </footer>
+
+</body>
+</html>

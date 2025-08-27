@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Додати рецепт | Food.ua</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+    <div class="page-container">
+        <aside class="sidebar">
+            <div class="logo-sidebar">
+                <i class="fa-solid fa-cookie-bite"></i>
+                <a href="index.html">Food.ua</a>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="soup_recepty.html"><i class="fas fa-utensils"></i>Супи перші страви</a></li>
+                    <li><a href="#"><i class="fas fa-pepper-hot"></i>Другі гарячі страви</a></li>
+                    <li><a href="#"><i class="fas fa-leaf"></i>Салати</a></li>
+                    <li><a href="#"><i class="fas fa-cookie"></i>Десерти</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <form action="/search" method="get">
+                    <div class="search-box">
+                        <input type="text" name="query" placeholder="Пошук рецептів...">
+                        <button type="submit" class="search-button">
+                            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        </button>
+                    </div>
+                </form>
+                <div class="user-actions">
+                <button class="tab-btn active">Увійти</button>
+                <button class="tab-btn">Реєстрація</button>
+                </div>
+            </header>
+
+            <section class="add-recipe-section">
+                <h2 class="section-title">Додати новий рецепт</h2>
+                
+                <form class="recipe-form">
+                    <div class="form-group">
+                        <label for="recipe-title">Назва рецепта</label>
+                        <input type="text" id="recipe-title" name="recipe-title" placeholder="Наприклад, Борщ із пампушками" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipe-description">Короткий опис</label>
+                        <textarea id="recipe-description" name="recipe-description" rows="4" placeholder="Опишіть страву кількома словами..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="recipe-image">Головне зображення страви</label>
+                        <input type="file" id="recipe-image" name="recipe-image" accept="image/*" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Інгредієнти</label>
+                        <div id="ingredients-list">
+                            <div class="ingredient-item">
+                                <input type="text" name="ingredient-name[]" placeholder="Назва інгредієнта" required>
+                                <input type="text" name="ingredient-quantity[]" placeholder="Кількість (напр. 200 г)" required>
+                            </div>
+                        </div>
+                        <button type="button" class="add-item-btn" onclick="addIngredient()">Додати ще інгредієнт</button>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Інструкція з приготування</label>
+                        <div id="instructions-list">
+                            <div class="instruction-step">
+                                <label>Крок 1</label>
+                                <textarea name="instruction-text[]" rows="3" placeholder="Опишіть крок приготування..." required></textarea>
+                                <input type="file" name="instruction-image[]" accept="image/*">
+                            </div>
+                        </div>
+                        <button type="button" class="add-item-btn" onclick="addInstruction()">Додати ще крок</button>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Опублікувати рецепт</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>© 2025 Food.ua | Усі права захищено</p>
+    </footer>
+
+    <script>
+        function addIngredient() {
+            const container = document.getElementById('ingredients-list');
+            const newDiv = document.createElement('div');
+            newDiv.classList.add('ingredient-item');
+            newDiv.innerHTML = `
+                <input type="text" name="ingredient-name[]" placeholder="Назва інгредієнта" required>
+                <input type="text" name="ingredient-quantity[]" placeholder="Кількість (напр. 200 г)" required>
+            `;
+            container.appendChild(newDiv);
+        }
+
+        function addInstruction() {
+            const container = document.getElementById('instructions-list');
+            const newDiv = document.createElement('div');
+            newDiv.classList.add('instruction-step');
+            const stepNumber = container.children.length + 1;
+            newDiv.innerHTML = `
+                <label>Крок ${stepNumber}</label>
+                <textarea name="instruction-text[]" rows="3" placeholder="Опишіть крок приготування..." required></textarea>
+                <input type="file" name="instruction-image[]" accept="image/*">
+            `;
+            container.appendChild(newDiv);
+        }
+    </script>
+</body>
+</html>

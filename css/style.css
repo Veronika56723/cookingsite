@@ -1,0 +1,586 @@
+/* Основні стилі та загальний макет */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.page-container {
+    display: grid;
+    grid-template-columns: 250px 1fr; /* 250px для сайдбара, 1fr для основного контенту */
+    min-height: 100vh;
+}
+
+/* Sidebar - Бічна панель */
+.sidebar {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.logo-sidebar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.logo-sidebar a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+.logo-sidebar i {
+    font-size: 28px;
+    color: #ff8c42;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+}
+
+.sidebar-nav li {
+    margin-bottom: 10px;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 15px;
+    color: #555;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar-nav a i {
+    font-size: 18px;
+    color: #888;
+}
+
+.sidebar-nav a:hover {
+    background-color: #ff8c42;
+    color: #fff;
+}
+
+.sidebar-nav a:hover i {
+    color: #fff;
+}
+
+/* Main Content - Основний контент */
+.main-content {
+    padding: 20px 40px;
+}
+
+/* Top Bar - Верхня панель */
+.top-bar {
+    display: flex;
+    justify-content: flex-end; /* Вирівнювання по правому краю */
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.search-box {
+    position: relative;
+    width: 300px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+}
+
+.search-box .search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 20px; /* Додаємо розмір іконки */
+}
+
+.user-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.user-actions .add-btn,
+.user-actions .login-btn {
+    text-decoration: none; /* Прибираємо підкреслення */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block; /* Щоб можна було застосовувати відступи та розміри */
+    text-align: center; /* Центруємо текст */
+}
+
+.user-actions .add-btn {
+    background-color: #ff8c42;
+    color: white;
+}
+
+.user-actions .login-btn {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    color: #333; /* Задаємо колір тексту */
+}
+/* Головна секція з фоновою картинкою та текстом */
+.hero-section {
+    position: relative;
+    height: 400px; /* Висота блоку */
+    background: url('../img/main.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Напівпрозорий overlay */
+}
+
+.hero-content {
+    position: relative; /* Щоб контент був поверх overlay */
+    z-index: 1;
+    max-width: 700px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Загальний контейнер контенту */
+.content-container {
+    padding: 20px 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Заголовок секції */
+.section-title {
+    text-align: center;
+    font-size: 28px;
+    color: #ff8c42;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Картки категорій (оновлені стилі) */
+.category-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.category-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ff8c42;
+    padding: 3px;
+    transition: transform 0.3s;
+}
+
+.category-card img:hover {
+    transform: scale(1.1);
+}
+
+.category-card a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Футер */
+footer {
+    grid-column: 1 / -1; /* Розтягуємо футер на всю ширину сітки */
+    background: #333;
+    color: #ddd;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    font-size: 14px;
+}
+/* Нові стилі для сторінки рецептів */
+
+.recipe-block-new {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+}
+
+.recipe-title-new {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.recipe-intro-new {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.recipe-image-new {
+    width: 300px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0; /* Щоб зображення не зменшувалося */
+}
+
+.recipe-description-new {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.recipe-details-new {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Створюємо дві колонки: одна для інгредієнтів, інша для інструкцій */
+    gap: 40px;
+}
+
+.recipe-details-new h3 {
+    font-size: 24px;
+    color: #ff8c42;
+    margin-bottom: 20px;
+}
+
+.recipe-ingredients-new ul {
+    list-style: none;
+    line-height: 1.6;
+}
+
+.recipe-ingredients-new li {
+    margin-bottom: 10px;
+}
+
+.recipe-instructions-new {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.instruction-step-new {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.step-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0; /* Щоб зображення не зменшувалося */
+}
+
+.instruction-step-new p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+/* Стилі для кнопки пошуку */
+.search-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.search-button .search-icon {
+    margin: 0;
+    color: #aaa;
+    font-size: 16px; /* Розмір іконки */
+}
+
+/* Оновлені стилі для .search-box */
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    background-color: #fff;
+    padding: 10px 15px; /* Регулюємо відступи */
+    width: 300px;
+}
+
+.search-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0; /* Видаляємо внутрішній padding */
+}
+/* Стилі для сторінки входу */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5; /* Такий же фон, як на сайті */
+}
+
+.modal-content-static {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+
+.close-btn-static {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.modal-tabs {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    flex-grow: 1;
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    background: none;
+    transition: color 0.3s;
+}
+
+.tab-btn.active {
+    color: #ff8c42;
+    border-bottom: 2px solid #ff8c42;
+}
+
+.modal-body label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.modal-body input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    color: #ff8c42;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.modal-submit-btn {
+    width: 100%;
+    background-color: #ff8c42;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.separator {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.separator::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+}
+
+.separator .or {
+    background: #fff;
+    padding: 0 10px;
+    color: #777;
+    font-size: 12px;
+}
+/* Стилі для сторінки "Додати рецепт" */
+.add-recipe-section {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.recipe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff8c42;
+    box-shadow: 0 0 0 3px rgba(255, 140, 66, 0.2);
+}
+
+.ingredient-item,
+.instruction-step {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.ingredient-item input[type="text"],
+.instruction-step textarea {
+    flex: 1;
+}
+
+.instruction-step {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.instruction-step label {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.add-item-btn {
+    background-color: #f0f2f5;
+    color: #ff8c42;
+    border: 1px solid #ff8c42;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 10px;
+}
+
+.add-item-btn:hover {
+    background-color: #ff8c42;
+    color: #fff;
+}
+
+.submit-btn {
+    background-color: #ff8c42;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background-color: #e57a35;
+}
